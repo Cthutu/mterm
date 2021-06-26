@@ -1,7 +1,18 @@
-#[cfg(test)]
-mod tests {
-    #[test]
-    fn it_works() {
-        assert_eq!(2 + 2, 4);
-    }
-}
+//
+// Matt's Terminal
+// Provides an interface for rendering ASCII text quickly on a window
+//
+
+mod app;
+mod builder;
+mod colour;
+mod main_loop;
+mod render;
+mod result;
+
+pub use app::*;
+pub use builder::*;
+pub use colour::*;
+pub use main_loop::*;
+pub use render::*;
+pub use result::*;
