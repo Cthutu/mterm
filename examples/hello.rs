@@ -3,6 +3,7 @@
 //
 
 use mterm::*;
+use winit::event::VirtualKeyCode;
 
 fn main() {
     let hello = Box::new(HelloApp {});
@@ -16,7 +17,18 @@ fn main() {
 struct HelloApp {}
 
 impl App for HelloApp {
-    fn tick(&mut self, _tick_input: TickInput) -> TickResult {
+    fn tick(&mut self, tick_input: TickInput) -> TickResult {
+        if let KeyState {
+            pressed: true,
+            shift: false,
+            ctrl: false,
+            alt: false,
+            vkey: Some(VirtualKeyCode::Escape),
+            ..
+        } = tick_input.key
+        {
+            return TickResult::Stop;
+        }
         TickResult::Continue
     }
 
