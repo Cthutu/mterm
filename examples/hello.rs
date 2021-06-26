@@ -20,20 +20,25 @@ impl App for HelloApp {
         TickResult::Continue
     }
 
-    fn present(&self, present_input: PresentInput) -> PresentResult {
-        present_input
-            .fore_image
-            .iter_mut()
-            .for_each(|x| *x = Colour::Red.into());
-        present_input
-            .back_image
-            .iter_mut()
-            .for_each(|x| *x = Colour::Black.into());
-        present_input
-            .text_image
-            .iter_mut()
-            .for_each(|x| *x = b'H' as u32);
-        //present_input.at(1, 1).pr("Hello, World!");
+    fn present(&self, mut present_input: PresentInput) -> PresentResult {
+        let mut image = Image::new(present_input.width, present_input.height);
+        image.clear(Colour::White.into(), Colour::Black.into());
+        image.draw_string(
+            Point::new(1, 1),
+            "Hello",
+            Colour::Yellow.into(),
+            Colour::Blue.into(),
+        );
+        image.draw_string(
+            Point::new(
+                present_input.width as i32 - 7,
+                present_input.height as i32 - 2,
+            ),
+            "World!",
+            Colour::Blue.into(),
+            Colour::Yellow.into(),
+        );
+        present_input.blit_screen(&image);
         PresentResult::Changed
     }
 }
