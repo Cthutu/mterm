@@ -8,9 +8,9 @@ use winit::event::VirtualKeyCode;
 /// methods from the trait: `tick` and `present`.
 ///
 /// `tick` is called everytime an event is triggered in the main loop.  It
-/// received a `TickInput` structure that contains various information such as
+/// receivs a `TickInput` structure that contains various information such as
 /// any key presses, mouse movements and clicks, and some stats.  Using this
-/// information the applicaiton can execute its logic.  This method should also
+/// information the application can execute its logic.  This method should also
 /// return a `TickResult` value to tell the main loop whether to continue or
 /// stop and exit the application.
 ///
@@ -81,8 +81,8 @@ pub struct KeyState {
     /// If a key has been pressed or released, this will contains its virtual
     /// key code as defined by the `winit` crate.
     pub vkey: Option<VirtualKeyCode>,
-    /// If a key was pressed, and is mappable to a character, this will contain
-    /// the character.
+    /// [NOT IMPLEMENTED YET] If a key was pressed, and is mappable to a
+    /// character, this will contain the character.
     pub code: Option<char>,
 }
 

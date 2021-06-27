@@ -67,6 +67,10 @@ impl Builder {
     /// Choose a font for rendering.
     ///
     /// A `FontData` structure can be created using the `load_font_image`.
+    ///
+    /// The font image passed in must contain 256 characters on a 16x16 equally
+    /// sized grid.  The size of each character is determined by taking the
+    /// width and size of the data in `FontData` and dividing it by 16.
     pub fn with_font(&mut self, font: FontData) -> &mut Self {
         self.font = Font::Custom(font);
         self
