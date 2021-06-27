@@ -1,8 +1,8 @@
 # mterm
 
-![GitHub Workflow Status](https://img.shields.io/github/workflow/status/cthutu/mterm/Rust?logo=GitHub)
-![Crates.io](https://img.shields.io/crates/d/mterm?logo=Rust)
-![Crates.io](https://img.shields.io/crates/l/mterm?logo=Rust)
+![GitHub Workflow Status](https://img.shields.io/github/workflow/status/cthutu/mterm/Rust?logo=GitHub&style=flat-square)
+![Crates.io](https://img.shields.io/crates/d/mterm?logo=Rust&style=flat-square)
+![Crates.io](https://img.shields.io/crates/l/mterm?logo=Rust&style=flat-square)
 
 This crate provides a framework for implementing an application that requires a single window with ASCII text.
 It uses the GPU to render the ASCII quickly and provides a trait of two methods so that user's code can hook into
