@@ -1,4 +1,4 @@
-use std::time::Duration;
+use time::Duration;
 use winit::event::VirtualKeyCode;
 
 /// Application trait for hooking into the main loop of `mterm`.

@@ -1,6 +1,7 @@
 use futures::executor::block_on;
 use image::ImageFormat;
-use std::{cmp::max, time::Duration};
+use std::cmp::max;
+use time::Duration;
 use wgpu::SwapChainError;
 use winit::{
     dpi::PhysicalSize,
@@ -191,7 +192,7 @@ pub async fn run_internal(mut app: Box<dyn App>, builder: Builder) -> Result<()>
 fn tick(app: &mut dyn App, render: &RenderState, key_state: &KeyState) -> TickResult {
     let (width, height) = render.chars_size();
     let sim_input = TickInput {
-        dt: Duration::ZERO,
+        dt: Duration::zero(),
         width,
         height,
         key: (*key_state).clone(),
